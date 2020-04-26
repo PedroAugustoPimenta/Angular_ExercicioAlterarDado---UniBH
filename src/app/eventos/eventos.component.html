@@ -1,0 +1,54 @@
+<!--<div>{{eventos.name}}</div>
+<div>{{eventos.date}}</div>
+<div>{{eventos.time}}</div>
+<div>{{eventos.location.address}}, {{eventos.location.city}}, {{eventos.location.country}}</div>
+-->
+<!--<div *ngFor="let array of Array">
+    <h1>Parabéns!</h1>
+    <h4>Seu componente está sendo exibido em tela</h4>
+    <hr>
+    <h5>Como aparece o seu evento abaixo?</h5>
+
+    <div style="margin-top:30px">
+        Evento: {{array.name}}
+    </div>
+    <div>
+        Data: {{array.date}}
+    </div>
+    <div>
+        Hora: {{array.time}}
+    </div>
+    <div>
+        Endereço: {{array.location?.address}}, {{array.location?.city}}, {{array.location?.country}},
+    </div>
+    <a href="{{array.onlineUrl}}">Link</a>
+</div>
+
+-->
+
+<!--<app-datas [Array]="Array"></app-datas> -->
+
+<div class="container">
+
+    <h1>Parabéns!</h1>
+    <h4>Seu componente está sendo exibido em tela</h4>
+    <hr>
+    <h5>Como aparece o seu evento abaixo?</h5>
+    <div *ngFor="let array of Array">
+
+        <div style="margin-top:30px">
+            Evento: {{array.name}}
+        </div>
+        <div>
+            Data: {{array.date}}
+        </div>
+        <div>
+            Hora: {{array.time}}
+        </div>
+        <ng-container *ngIf="array.location !== undefined">
+
+            <app-endereco [Array]="array" (atualizaEndereco)="receberEnderecoAtualizado($event)"></app-endereco>
+
+        </ng-container>
+    </div>
+</div>

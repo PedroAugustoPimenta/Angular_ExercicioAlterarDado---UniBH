@@ -1,0 +1,39 @@
+<!--<div *ngFor="let array of Array">
+    <hr>
+    <h3>Endereço do local:</h3>
+
+    <ng-container *ngIf="array.location !==undefined">
+        Endereço: {{array.location.address}}, {{array.location.city}}, {{array.location.country}};
+    </ng-container>
+</div>
+-->
+<h3>Endereço do local:</h3>
+
+
+Endereço: {{Array.location?.address}}, {{Array.location?.city}}, {{Array.location?.country}},
+
+<div>
+
+    <div>
+        <br>
+
+
+
+        <p>
+
+            Local: <input ref-local type="text">
+
+        </p>
+        <p>
+            Cidade: <input ref-cidade type="text">
+
+        </p>
+        <p>
+            Pais: <input ref-pais type="text">
+
+        </p>
+
+        <button (click)="Atualizar(local.value, cidade.value, pais.value)">Atualizar Dados</button>
+
+    </div>
+</div>
